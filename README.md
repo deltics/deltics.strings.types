@@ -1,0 +1,3 @@
+# Deltics.Strings.Types
+
+
