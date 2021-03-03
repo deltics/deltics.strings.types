@@ -5,7 +5,7 @@
 
 uses
   Deltics.Smoketest,
-  Deltics.Strings.Types in '..\src\Deltics.Strings.Types.pas',
+  Deltics.StringTypes in '..\src\Deltics.StringTypes.pas',
   Test.Types in 'Test.Types.pas';
 
 begin

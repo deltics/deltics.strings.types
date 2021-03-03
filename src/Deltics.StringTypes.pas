@@ -1,7 +1,7 @@
 
 {$i deltics.inc}
 
-  unit Deltics.Strings.Types;
+  unit Deltics.StringTypes;
 
 
 interface
@@ -71,63 +71,10 @@ interface
     AsciiCharSet  = set of AsciiChar;
 
 
-  function CharInSet(const aChar: AnsiChar; aSet: AnsiCharSet): Boolean; overload;
-{$ifdef UNICODE}
-  function CharInSet(const aChar: AsciiChar; aSet: AnsiCharSet): Boolean; overload;
-  function CharInSet(const aChar: Utf8Char; aSet: AnsiCharSet): Boolean; overload;
-{$endif}
-  function CharInSet(const aChar: Utf32Char; aSet: AnsiCharSet): Boolean; overload;
-  function CharInSet(const aChar: WideChar; aSet: AnsiCharSet): Boolean; overload;
-
-  function AsciiCharInSet(const aChar: AsciiChar; aSet: AnsiCharSet): Boolean;
-  function Utf8CharInSet(const aChar: Utf8Char; aSet: AnsiCharSet): Boolean;
-
 
 implementation
 
 
-  function CharInSet(const aChar: AnsiChar; aSet: AnsiCharSet): Boolean;
-  begin
-    result := aChar in aSet;
-  end;
-
-
-{$ifdef UNICODE}
-  function CharInSet(const aChar: AsciiChar; aSet: AnsiCharSet): Boolean;
-  begin
-    result := aChar in aSet;
-  end;
-
-
-  function CharInSet(const aChar: Utf8Char; aSet: AnsiCharSet): Boolean;
-  begin
-    result := (aChar <= ASCII_HI) and (AsciiChar(aChar) in aSet);
-  end;
-{$endif}
-
-
-  function CharInSet(const aChar: Utf32Char; aSet: AnsiCharSet): Boolean;
-  begin
-    result := (aChar <= Codepoint(ASCII_HI)) and (AsciiChar(aChar) in aSet);
-  end;
-
-
-  function CharInSet(const aChar: WideChar; aSet: AnsiCharSet): Boolean;
-  begin
-    result := (aChar <= ASCII_HI) and (AsciiChar(aChar) in aSet);
-  end;
-
-
-  function AsciiCharInSet(const aChar: AsciiChar; aSet: AnsiCharSet): Boolean;
-  begin
-    result := aChar in aSet;
-  end;
-
-
-  function Utf8CharInSet(const aChar: Utf8Char; aSet: AnsiCharSet): Boolean;
-  begin
-    result := (aChar <= ASCII_HI) and (AsciiChar(aChar) in aSet);
-  end;
 
 
 end.

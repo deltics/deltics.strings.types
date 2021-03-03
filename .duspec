@@ -1,7 +1,7 @@
 {
-  "id":"deltics.strings.types",
+  "id":"deltics.stringtypes",
   "version":"",
-  "summary":"Fundamental types for string handling, including strings, chars and arrays of strings and chars.",
+  "summary":"Fundamental string types including strings, chars and arrays of strings and chars.",
   "tags":[
     "deltics",
     "strings",
@@ -15,8 +15,8 @@
   ],
   "source":{
       "files":[
-        "src\\Deltics.Strings.Types.pas",
-        "src\\deltics.strings.types.aliases.inc"
+        "src\\Deltics.StringTypes.pas",
+        "src\\deltics.stringtypes.aliases.inc"
       ]
     }
 }

@@ -11,7 +11,6 @@ interface
 
   type
     Types = class(TTest)
-      procedure CharInSet_;
       procedure SizeOfAnsiChar;
       procedure SizeOfAsciiChar;
       procedure SizeOfChar;
@@ -28,23 +27,11 @@ interface
 implementation
 
   uses
-    Deltics.Strings.Types;
+    Deltics.StringTypes;
 
 
 
 { Types ------------------------------------------------------------------------------------------ }
-
-  procedure Types.CharInSet_;
-  const
-    L_WITH_STROKE : WideChar = #$0141;
-  begin
-    Test('CharInSet(A, [A, B, C])').Assert(CharInSet('A', ['A', 'B', 'C'])).IsTrue;
-    Test('CharInSet(X, [A, B, C])').Assert(CharInSet('X', ['A', 'B', 'C'])).IsFalse;
-
-    Test('AnsiChar({char}) in [A, B, C])', [L_WITH_STROKE]).Assert(AnsiChar(L_WITH_STROKE) in ['A', 'B', 'C']).IsTrue;
-    Test('CharInSet({char}, [A, B, C])', [L_WITH_STROKE]).Assert(CharInSet(L_WITH_STROKE, ['A', 'B', 'C'])).IsFalse;
-  end;
-
 
   procedure Types.SizeOfAnsiChar;
   begin
