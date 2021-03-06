@@ -8,7 +8,8 @@ interface
 
   type
   // A Codepoint is a natively expressed (LE on Windows) 32-bit value
-  //  identifying a unique Unicode codepoint and is an alias for the Utf32Char type.
+  //  identifying a unique Unicode codepoint.  Utf32Char is an alias for
+  //  this type.
 
     Codepoint   = Cardinal;
     PCodepoint  = ^Codepoint;
@@ -26,7 +27,8 @@ interface
     AsciiString   = type Utf8String;
 
 
-  // Chars
+  // Chars  (AnsiChar and WideChar are defined by System)
+
   const
     ASCII_LO  = AnsiChar($00);
     ASCII_HI  = AnsiChar($7f);
@@ -35,11 +37,13 @@ interface
     AsciiChar     = ASCII_LO..ASCII_HI;
     Utf8Char      = type AnsiChar;
     Utf16Char     = WideChar;
+    Utf16BeChar   = type WideChar;
     Utf32Char     = type Codepoint;
 
     PAsciiChar    = ^AsciiChar;
     PUtf8Char     = ^Utf8Char;
     PUtf16Char    = ^Utf16Char;
+    PUtf16BeChar  = ^Utf16BeChar;
     PUtf32Char    = ^Utf32Char;
 
 
@@ -50,6 +54,7 @@ interface
     CharArray       = array of Char;
     Utf8Array       = array of Utf8Char;
     Utf16Array      = array of Utf16Char;
+    Utf16BeArray    = array of Utf16BeChar;
     Utf32Array      = array of Utf32Char;
     WideCharArray   = array of WideChar;
     CodepointArray  = array of Codepoint;
