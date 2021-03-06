@@ -1,0 +1,22 @@
+{
+  "id":"deltics.stringtypes",
+  "version":"",
+  "summary":"Fundamental string types including strings, chars and arrays of strings and chars.",
+  "tags":[
+    "deltics",
+    "strings",
+    "unicode"
+  ],
+  "copyright":"\u00a92020 Jolyon Direnko-Smith",
+  "language":"en",
+  "content":"source",
+  "dependencies":[
+    "deltics.inc:1.3.0"
+  ],
+  "source":{
+      "files":[
+        "src\\Deltics.StringTypes.pas",
+        "src\\deltics.stringtypes.aliases.inc"
+      ]
+    }
+}
