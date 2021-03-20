@@ -65,9 +65,14 @@ interface
     AnsiStringArray     = array of AnsiString;
     AsciiStringArray    = array of AsciiString;
     StringArray         = array of String;
-    UnicodeStringArray  = array of UnicodeString;
     Utf8StringArray     = array of Utf8String;
     WideStringArray     = array of WideString;
+
+  {$ifdef UNICODE}
+    UnicodeStringArray  = StringArray;
+  {$else}
+    UnicodeStringArray  = array of UnicodeString;
+  {$endif}
 
 
   // Sets
