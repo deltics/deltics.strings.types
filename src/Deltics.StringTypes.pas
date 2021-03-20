@@ -71,7 +71,7 @@ interface
   {$ifdef UNICODE}
     UnicodeStringArray  = StringArray;
   {$else}
-    UnicodeStringArray  = WideStringArray;
+    UnicodeStringArray  = array of UnicodeString;
   {$endif}
 
 
